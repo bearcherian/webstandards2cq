@@ -5,12 +5,12 @@ import java.util.HashMap;
 /**
  * Created by bear on 12/27/14.
  */
-public class SelectInput extends Input {
+public class MultiValueInput extends Input {
 
     private HashMap<String,String> values = new HashMap<>();
     private boolean multiple = false;
 
-    public SelectInput(){
+    public MultiValueInput(){
         this.setType(Type.SELECT);
     }
 
