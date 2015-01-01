@@ -1,7 +1,7 @@
 package edu.villanova.convert.forms.input;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Created by bear on 12/26/14.
@@ -15,7 +15,7 @@ public class Input {
     private boolean disabled = false, readOnly = false, required = false, autoComplete = true;
     private Type type;
 
-    private Logger logger = LoggerFactory.getLogger(Input.class);
+    private Logger logger = LogManager.getLogger(Input.class);
     public Input() {
 
     }
