@@ -11,7 +11,7 @@ public class Input {
     private String text;
     private int maxLength;
     private boolean checked;
-    private String value, name, id, label, placeholder, alt;
+    private String value = "", name, id, label = "", placeholder, alt, vuValue = "";
     private boolean disabled = false, readOnly = false, required = false, autoComplete = true;
     private Type type;
 
@@ -145,6 +145,14 @@ public class Input {
         this.alt = alt;
     }
 
+    public String getVuValue() {
+        return vuValue;
+    }
+
+    public void setVuValue(String vuValue) {
+        this.vuValue = vuValue;
+    }
+
     public enum Type{
         TEXT("text"),
         PASSWORD("password"),
@@ -177,6 +185,40 @@ public class Input {
 
         public String getTypeValue() {
             return typeValue;
+        }
+    }
+
+    public static enum VuValue {
+        USER_ID("userId","<vu:uid/>"),
+        EMAIL("email","<vu:mail/>"),
+        FIRST_NAME("givenName","<vu:firstname/>"),
+        LAST_NAME("familyName","<vu:lastname/>"),
+        MIDDLE_NAME("middleName","<vu:middlename/>"),
+        COMMON_NAME("commonName","<vu:cn/>"),
+        DEPARTMENT_NAME("departmentName","<vu:departmantname/>"),
+        STUDENT_CLASS("studentClass","<vu:classyear/>"),
+        STUDENT_PROGRAM("studentProgram",""),
+        STUDY_LEVEL("studyLevel",""),
+        STUDENT_MAJOR("studentMajor","<vu:major/>"),
+        STUDENT_COLLEGE("studentCollege","<vu:college/>");
+
+        private String profileAttr;
+        private String vuTagValue;
+        VuValue(String profileValue, String vuTagValue) {
+            this.profileAttr = profileValue;
+            this.vuTagValue = vuTagValue;
+        }
+
+        public String getProfileAttr() {
+            return profileAttr;
+        }
+
+        public void setProfileAttr(String profileAttr) {
+            this.profileAttr = profileAttr;
+        }
+
+        public String getVuTagValue() {
+            return vuTagValue;
         }
     }
 
