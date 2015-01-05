@@ -12,7 +12,7 @@ public class CQUtil {
 
     public static String formattedString(String contentString) {
 
-        return contentString.replace("&","&amp;").replace("\"","&quot;").replace("<","&lt;");
+        return contentString == null ? "" : contentString.replace("&","&amp;").replace("\"","&quot;").replace("<","&lt;");
     }
 
     public static String getHTMLContent(String filename) {
